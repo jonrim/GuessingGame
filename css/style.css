@@ -1,0 +1,77 @@
+/* Base structure */
+@font-face {
+	font-family: "andes";
+	src: url('../fonts/andes.ttf');
+}
+
+html,
+body {
+	height: 100%;
+	text-align: center;
+}
+
+body {
+	display: block;
+	background: url('../images/background.jpg') transparent center center no-repeat;
+	-webkit-background-size: cover;
+	   -moz-background-size: cover;
+	        background-size: cover;
+	font-family: "Whitney SSm A", "Whitney SSm B", "Lucida Grande", "Lucida Sans", Verdana, Helvetica, Arial, sans-serif;
+}
+
+.site-wrapper {
+	min-width: 100%;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	/* why does setting width to 100% on the footer create a white space to the right of the page? scroll right */
+	width: 100%;
+	height: 100px;
+	background-color: #333;
+	color:#eee;
+	padding: 25px 0;
+}
+
+/* Buttons */
+button {
+	margin-top: 10px;	
+}
+
+/* Classes */
+.title {
+	background: -webkit-linear-gradient(to top, #09122f, #162d79);
+	background:    -moz-linear-gradient(to top, #09122f, #162d79);
+	background:         linear-gradient(to top, #09122f, #162d79);
+	text-align: center;
+	color: #eee;
+	font-family: "andes";
+	font-size: 48px;
+	margin: 60px auto;
+	width: 50%;
+	min-width: 270px;
+	border: 5px solid #000;
+	border-radius: 10px;
+	padding: 30px;
+}
+
+
+/* IDs */
+#guessBox {
+	width: 300px;
+	padding: 30px;
+	border-radius: 10px;
+	margin: 0 auto;
+}
+#submitGuess {
+	width: 270px;
+}
+
+#resetGame {
+	width: 140px;
+}
+
+#giveHint {
+	width: 125px;
+}
