@@ -56,6 +56,11 @@ button {
 	padding: 30px;
 }
 
+.text {
+	font-family: "andes";
+	font-size: 48px;
+	color: #eee;
+}
 
 /* IDs */
 #guessBox {
@@ -64,6 +69,7 @@ button {
 	border-radius: 10px;
 	margin: 0 auto;
 }
+
 #submitGuess {
 	width: 270px;
 }
