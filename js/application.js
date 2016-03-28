@@ -18,11 +18,17 @@ guessingGame.prototype.playersGuessSubmission = function() {
 		// Parse the player's input to an integer if it has a decimal  
 		this.playersGuess = parseInt(+$("#usersGuess").val(), 10);
 		if (this.playersGuess < 1 || this.playersGuess > 100 || isNaN(this.playersGuess)) {
-			$("#message").html("Insert a valid number.");
+			$("#message").fadeOut("fast", function() { 
+				$("#message").html("Insert a valid number");
+				$("#message").fadeIn("fast");
+			});
 			return false;
 		}
 		else if ($.inArray(this.playersGuess, this.previousGuesses) !== -1) {
-			$("#message").html("Number was already inputted.");
+			$("#message").fadeOut("fast", function() { 
+				$("#message").html("Number was already inputted");
+				$("#message").fadeIn("fast");
+			});
 			return false;
 		}
 		this.previousGuesses.push(this.playersGuess);
@@ -58,19 +64,32 @@ guessingGame.prototype.guessMessage = function() {
 
 // Check if the Player's Guess is the winning number 
 guessingGame.prototype.checkGuess = function() {
+	var gg = this;
 	if (this.numOfGuessesRemaining > 0) {
 		this.numOfGuessesRemaining--;
-		$("#numOfGuesses").html(this.numOfGuessesRemaining + " Guesses Remaining");
+		$("#numOfGuesses").fadeOut("fast", function() {
+			$("#numOfGuesses").html(gg.numOfGuessesRemaining + " Guesses Remaining");
+			$("#numOfGuesses").fadeIn("fast");
+		});
 		if (this.playersGuess === this.winningNum) {
-			$("#message").html("Congrats, you guessed the correct number!");
-			this.gameWon = true;
+			$("#message").fadeOut("fast", function() {
+				$("#message").html("Congrats, you guessed the correct number!");
+				gg.gameWon = true;
+				$("#message").fadeIn("fast");
+			});
 		}
 		else {
-			$("#message").html(this.guessMessage());
+			$("#message").fadeOut("fast", function() {
+				$("#message").html(gg.guessMessage());
+				$("#message").fadeIn("fast");
+			});
 		}
 	}
 	else {
-		$("#message").html("No more guesses available. Reset the game.");
+		$("#message").fadeOut("fast", function() {
+			$("#message").html("No more guesses available. Reset the game.");
+			$("#message").fadeIn("fast");
+		});
 	}
 }
 
@@ -96,7 +115,10 @@ guessingGame.prototype.provideHint = function() {
 		possibleAnswers += ", ";
 	}
 	possibleAnswers = possibleAnswers.slice(0, -2);
-	$("#message").html(possibleAnswers);
+	$("#message").fadeOut("fast", function() {
+		$("#message").html(possibleAnswers);
+		$("#message").fadeIn("fast");
+	});
 }
 
 // Allow the "Player" to Play Again
@@ -106,7 +128,9 @@ guessingGame.prototype.playAgain = function() {
 	this.numOfGuessesRemaining = 10;
 	this.gameWon = false;
 	$("#message").html("New Game");
+	$("#message").fadeIn("fast");
 	$("#numOfGuesses").html(this.numOfGuessesRemaining + " Guesses Remaining");
+	$("#numOfGuesses").fadeIn("fast");
 }
 
 

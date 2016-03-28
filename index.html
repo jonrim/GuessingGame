@@ -13,7 +13,7 @@ Jonathan Rim
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>The Guessing Game | Jonathan Rim</title>
     <!-- Bootstrap -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -30,15 +30,15 @@ Jonathan Rim
     <![endif]-->
   </head>
   <body>
-    <div class="site-wrapper">
-      <div id="header" class="container">
+    <main>
+      <header class="container">
         <div class="title">
           <strong>Guess The Number</strong>
         </div>
-      </div>
+      </header>
       <div id="guessBox" class="container">
         <div class="row">
-          <input id="usersGuess" type="text" class="form-control" placeholder="Input a number from 1 to 100">
+          <input id="usersGuess" type="number" class="form-control" placeholder="Input a number from 1 to 100" autofocus />
         </div>
         <div class="row">
           <div id="message" class="text"></div>
@@ -54,15 +54,15 @@ Jonathan Rim
           <div id="numOfGuesses" class="text">10 Guesses Remaining</div>
         </div>
       </div>
-      <div id="footer" >
+      <footer>
         <div class="row">
           Contact me @ jonrim@umich.edu
         </div>
         <div class="row">
             <small>Copyright &copy; 2016 All Rights Reserved by Jonathan Rim</small>
         </div>
-      </div>
-    </div>
+      </footer>
+    </main>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
